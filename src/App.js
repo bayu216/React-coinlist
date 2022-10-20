@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import { Layout, Breadcrumb } from "antd";
+
+import Topnav from "./component/Topnav";
+import TabelCoin from "./component/TabelCoin";
+
+const { Header, Footer, Content } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Layout>
+        <Header style={{ background: "#ffffff" }}>
+          <Topnav />
+        </Header>
+        <div style={{ background: "#F3F7FB", marginBottom: "10px" }}>
+          <Breadcrumb style={{ marginLeft: "140px", marginTop: "10px" }}>
+            <Breadcrumb.Item style={{ color: "#ACBCCF" }}>
+              Coin List
+            </Breadcrumb.Item>
+          </Breadcrumb>
+          <Content style={{ background: "#F3F7FB" }}>
+            <div
+              style={{
+                height: "510px",
+                marginLeft: "60px",
+                background: "#F3F7FB",
+                marginTop: "10px",
+              }}
+            >
+              <TabelCoin />
+            </div>
+          </Content>
+        </div>
+        <Footer
+          style={{
+            display: "flex",
+            background: "#1D4279",
+            position: "fixed",
+            bottom: "0px",
+            width: "100%",
+            justifyContent: "center",
+            color: "#ffffff",
+            height: "20px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          [Fauzi Bayu Saputra]
+        </Footer>
+      </Layout>
+    </>
   );
 }
 
